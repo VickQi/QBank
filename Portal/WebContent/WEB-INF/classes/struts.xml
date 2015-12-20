@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<constant name="struts.action.extension" value="do"/>
+
+	<package name="gateway" extends="struts-default">
+		<action name="gateWay" class="cn.qihaizhi.bank.GateWay" method="execute">
+		      <result name="success">/WEB-INF/jsp/gateWay.jsp</result>
+		      <result name="error">/WEB-INF/jsp/error.jsp</result>
+		</action>
+	</package>
+	<package name="payment" extends="json-default">
+		<action name="pay" class="cn.qihaizhi.bank.Pay" method="execute">
+		      <result name="success" type="json"/>
+		      <result name="error" type="json"/>
+		</action>
+	</package>
+</struts>
